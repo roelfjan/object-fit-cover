@@ -1,0 +1,282 @@
+<html>
+    <head>
+        <title>Object fit</title>
+
+        <script src="objectfit-polyfill.js"></script>
+
+        <style>
+            /*.object-fit-container {
+                position: relative;
+            }
+            .object-fit-container img {
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+            }
+            .object-fit-container.cover {
+                background-size: cover;
+            }
+            .object-fit-container.cover img {
+                object-fit: cover;
+            }*/
+            .object-fit-container.contain {
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .object-fit-container.contain img {
+                object-fit: contain;
+            }
+
+            /*.no-object-fit .object-fit-container img {
+                display: none;
+            }*/
+
+            .object-fit-container-example-1 {
+                width: 100%;
+                height: 300px;
+            }
+
+            .object-fit-container-example-2 {
+                width: 100%;
+                height: 300px;
+            }
+
+            .object-fit-container-example-4 {
+                width: 100%;
+                height: 300px;
+                background-position: left top;
+            }
+
+            .object-fit-container-example-4 img {
+                object-position: 0 0;
+            }
+        </style>
+        <link rel="stylesheet" href="bootstrap.min.css" />
+    </head>
+
+    <body>
+        <div class="ui container">
+            <div class="jumbotron">
+                <h1 class="">Responsive background image cover with the &lt;img> tag</h1>
+            </div>
+
+            <div>
+                <h3>2. Include CSS for the images</h3>
+
+                <pre>
+
+.object-fit-container {
+    position: relative;
+}
+.object-fit-container img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+// cover
+.object-fit-container.cover img {
+    object-fit: cover;
+}
+.object-fit-container.cover {
+    background-size: cover; // fallback
+}
+
+// fallback
+.no-object-fit .object-fit-container img {
+    display: none;
+}
+                </pre>
+            </div>
+
+            <div>
+                <h3>3. Include your images and custom CSS</h3>
+                <p>See section <a href="#examples">examples</a></p>
+            </div>
+
+
+            <div>
+                <h1 id="examples">Examples</h1>
+
+                <h3>Image without responsive behaviour</h3>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <pre>
+.object-fit-container-example-1 {
+    background-position: center center;
+    width: 100%;
+    height: 300px;
+}
+</pre>
+
+                        <pre>
+&lt;div class="object-fit-container cover object-fit-container-example-1">
+    &lt;img src="images/example1@1200x800.jpg" alt="Example image" />
+&lt;/div>
+</pre>
+                        <div class="object-fit-container cover object-fit-container-example-1">
+                            <img src="images/example1@1200x800.jpg"
+                                 alt="Example 1" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <h3>Image with responsive behaviour (srcset attribute)</h3>
+                <p>
+                    Want to know more about using srcset or the picture element? Read about it on <a href="https://jakearchibald.com/2015/anatomy-of-responsive-images/">Jake Archibalds blog</a>
+                </p>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <pre>
+.object-fit-container-example-2 {
+    background-position: center center;
+    width: 100%;
+    height: 300px;
+}
+</pre>
+
+                        <pre>
+&lt;div class="object-fit-container cover object-fit-container-example-2">
+    &lt;img src="images/example2@1200x800.jpg"
+         srcset="images/example2@2400x1600.jpg 2400w,
+                 images/example2@1200x800.jpg 1200w,
+                 images/example2@800x533.jpg 800w,
+                 images/example2@400x267.jpg 400w"
+         sizes="(min-width: 1200px) 1170px,
+                (min-width: 992px) 970px,
+                (min-width: 768px) 750px,
+                100vw"
+         alt="Example 2" />
+&lt;/div>
+</pre>
+                        <div class="object-fit-container cover object-fit-container-example-2">
+                            <img src="images/example2@400x267.jpg"
+                                 srcset="images/example2@2400x1600.jpg 2400w,
+                                         images/example2@1200x800.jpg 1200w,
+                                         images/example2@800x533.jpg 800w,
+                                         images/example2@400x267.jpg 400w"
+                                 sizes="(min-width: 1200px) 1170px,
+                                        (min-width: 992px) 970px,
+                                        (min-width: 768px) 750px,
+                                        100vw"
+                                 alt="Example 2" />
+                        </div>
+                        <p>
+                            Note: You only will see a changing src image when starting with a small viewport width. The browsers only downloads larger images when having cached versions of the same image.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Image with responsive behaviour (picture-tag)</h3>
+                <p>
+                    Want to know more about using srcset or the picture element? Read about it on <a href="https://jakearchibald.com/2015/anatomy-of-responsive-images/">Jake Archibald's blog</a>
+                </p>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <pre>
+.object-fit-container-example-2 {
+    background-position: center center;
+    width: 100%;
+    height: 300px;
+}
+</pre>
+
+                        <pre>
+&lt;div class="object-fit-container cover object-fit-container-example-2">
+    &lt;img src="images/example2@1200x800.jpg"
+         srcset="images/example2@2400x1600.jpg 2400w,
+                 images/example2@1200x800.jpg 1200w,
+                 images/example2@800x533.jpg 800w,
+                 images/example2@400x267.jpg 400w"
+         sizes="(min-width: 1200px) 1170px,
+                (min-width: 992px) 970px,
+                (min-width: 768px) 750px,
+                100vw"
+         alt="Example 2" />
+&lt;/div>
+</pre>
+                        <div class="object-fit-container cover object-fit-container-example-2">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="images/example2@2400x1600.jpg 2400w,
+                                         images/example2@1200x800.jpg 1200w,
+                                         images/example2@800x533.jpg 800w,
+                                         images/example2@400x267.jpg 400w"
+                                 sizes="(min-width: 1200px) 1170px,
+                                        (min-width: 992px) 970px,
+                                        (min-width: 768px) 750px,
+                                        100vw">
+
+                            <img src="images/example1@1200x800.jpg"
+                                 sizes="100vw"
+                                 alt="Example 3" />
+                            </picture>
+                        </div>
+                        <p>
+                            Note: You only will see a changing src image when starting with a small viewport width. When the browsers already has downloaded a larger image, then the smaller isn't downloaded anymore.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Image with different background-positions</h3>
+                <div class="object-fit-container cover object-fit-container-example-4">
+                    <img src="images/example2@400x267.jpg"
+                         srcset="images/example2@2400x1600.jpg 2400w,
+                                 images/example2@1200x800.jpg 1200w,
+                                 images/example2@800x533.jpg 800w,
+                                 images/example2@400x267.jpg 400w"
+                         sizes="(min-width: 1200px) 1170px,
+                                (min-width: 992px) 970px,
+                                (min-width: 768px) 750px,
+                                100vw"
+                                class="object-position"
+                         alt="Example 4" />
+                </div>
+
+            </div>
+
+            <div>
+                <h2>Browser support</h2>
+            </div>
+
+            <div>
+                <h2>What is not supported?</h2>
+                <ul>
+                    <li>CSS property <code>background-attachment: fixed</code></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>What about?</h2>
+                <ul>
+                    <li>
+                        Supporting <code>background-size: contain</code>? You can add this code to make it work as well:
+<pre>
+.object-fit-container.contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.object-fit-container.contain img {
+    object-fit: contain;
+}
+</pre>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                Todo:<br />
+                IE8<br>
+                non-js fallback?<br>
+                dynamically loaded fixen<br>
+                background-size: contain
+                background-size: one-value/two-value syntax
+
+
+            </div>
+        </div>
+
+        <script src="picturefill.min.js" async></script>
+    </body>
+</html>
