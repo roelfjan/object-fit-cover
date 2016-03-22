@@ -30,7 +30,9 @@
 
       for (var i = 0; i < elements.length; i++) {
         var img = elements[i].getElementsByTagName('img')[0];
-        var imageSrc = img.src;
+
+        // get current image src: Edge only supports 'currentSrc' for getting the current image src ('src' returns value DOM value)
+        var imageSrc = img.currentSrc || img.src;
 
         elements[i].style.backgroundImage = 'url(' + imageSrc + ')';
       }
