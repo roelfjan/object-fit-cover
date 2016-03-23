@@ -2,35 +2,12 @@
     <head>
         <title>Object fit</title>
 
-        <script src="objectfit-polyfill.js"></script>
+        <script>
+            /*! ObjectFitCover 0.0.1 */
+!function(){function a(){var a=".object-fit-container { position: relative; } .object-fit-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .object-fit-container.cover img { object-fit: cover; } .object-fit-container.cover { background-position: center center; background-size: cover; background-repeat: no-repeat; } .no-object-fit .object-fit-container img { display: none; }",b=document.createElement("style");b.type="text/css",b.styleSheet?b.styleSheet.cssText=a:b.appendChild(document.createTextNode(a)),document.head.appendChild(b)}function b(){c||d(function(){for(var a=document.getElementsByClassName("object-fit-container"),b=0;b<a.length;b++){var c=a[b].getElementsByTagName("img")[0],d=c.currentSrc||c.src;a[b].style.backgroundImage="url("+d+")"}})}var c="objectFit"in document.documentElement.style,d=function(){return window.requestAnimationFrame||function(a){window.setTimeout(a,10)}}();if(a(),!c){document.documentElement.className+=" no-object-fit";var e=setInterval(function(){window.picturefill&&(clearInterval(e),d(b))},100);window.addEventListener("resize",function(){setTimeout(function(){b()},100)})}window.objectFitCover=b}();
+        </script>
 
         <style>
-            /*.object-fit-container {
-                position: relative;
-            }
-            .object-fit-container img {
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%; height: 100%;
-            }
-            .object-fit-container.cover {
-                background-size: cover;
-            }
-            .object-fit-container.cover img {
-                object-fit: cover;
-            }*/
-            .object-fit-container.contain {
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-            .object-fit-container.contain img {
-                object-fit: contain;
-            }
-
-            /*.no-object-fit .object-fit-container img {
-                display: none;
-            }*/
-
             .object-fit-container-example-1 {
                 width: 100%;
                 height: 300px;
@@ -59,41 +36,6 @@
             <div class="jumbotron">
                 <h1 class="">Responsive background image cover with the &lt;img> tag</h1>
             </div>
-
-            <div>
-                <h3>2. Include CSS for the images</h3>
-
-                <pre>
-
-.object-fit-container {
-    position: relative;
-}
-.object-fit-container img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-}
-
-// cover
-.object-fit-container.cover img {
-    object-fit: cover;
-}
-.object-fit-container.cover {
-    background-size: cover; // fallback
-}
-
-// fallback
-.no-object-fit .object-fit-container img {
-    display: none;
-}
-                </pre>
-            </div>
-
-            <div>
-                <h3>3. Include your images and custom CSS</h3>
-                <p>See section <a href="#examples">examples</a></p>
-            </div>
-
 
             <div>
                 <h1 id="examples">Examples</h1>
@@ -219,59 +161,15 @@
                     </div>
                 </div>
 
-                <h3>Image with different background-positions</h3>
-                <div class="object-fit-container cover object-fit-container-example-4">
-                    <img src="images/example2@400x267.jpg"
-                         srcset="images/example2@2400x1600.jpg 2400w,
-                                 images/example2@1200x800.jpg 1200w,
-                                 images/example2@800x533.jpg 800w,
-                                 images/example2@400x267.jpg 400w"
-                         sizes="(min-width: 1200px) 1170px,
-                                (min-width: 992px) 970px,
-                                (min-width: 768px) 750px,
-                                100vw"
-                                class="object-position"
-                         alt="Example 4" />
-                </div>
 
             </div>
 
-            <div>
-                <h2>Browser support</h2>
-            </div>
-
-            <div>
-                <h2>What is not supported?</h2>
-                <ul>
-                    <li>CSS property <code>background-attachment: fixed</code></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2>What about?</h2>
-                <ul>
-                    <li>
-                        Supporting <code>background-size: contain</code>? You can add this code to make it work as well:
-<pre>
-.object-fit-container.contain {
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.object-fit-container.contain img {
-    object-fit: contain;
-}
-</pre>
-                    </li>
-                </ul>
-            </div>
 
             <div>
                 Todo:<br />
                 IE8<br>
                 non-js fallback?<br>
                 dynamically loaded fixen<br>
-                background-size: contain
-                background-size: one-value/two-value syntax
 
 
             </div>
