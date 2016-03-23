@@ -13,7 +13,7 @@ A polyfill for responsive background image cover with the `img` or `picture` usi
 ## Usage
 
 ### 1. Include ObjectFitCover
-Preferably inline (0.5kb gzip) in the `head` section before the stylesheets. This to have the best render performance. [Copy the source from here]()
+Preferably inline (1.17kb, 0.5kb gzipped) in the `head` section before the stylesheets. This to have the best render performance. [Copy the source from here]()
 
 
 ```html
@@ -28,11 +28,11 @@ Preferably inline (0.5kb gzip) in the `head` section before the stylesheets. Thi
 
 ### 2. Include [Picturefill](https://github.com/scottjehl/picturefill/)
 This is a polyfill for supporting `srcset` and the `picture` element. Include it preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
-Note: if you don't need picturefill, don't include it but set `window.picturefill = {}` to make this lib work.
 
 ```html
 <script src="picturefill.min.js" async></script>
 ```
+Note: if you don't need picturefill, set `window.picturefill = {}` to make this polyfill work.
 
 ### 3. Include your images & CSS
 [See the examples]()
@@ -52,43 +52,43 @@ Note: if you don't need picturefill, don't include it but set `window.picturefil
 - Firefox: combining <code>object-fit</code> with a transition gives weird behaviour (see bug .. )
 
 ## What about?
-### Supporting `object-fit: contain`?
-You can add this CSS to make it work as well:
-```css
-.object-fit-container.contain {
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.object-fit-container.contain img {
-    object-fit: contain;
-}
+- Supporting `object-fit: contain`?
+  You can add this CSS to make it work as well:
+  ```css
+  .object-fit-container.contain {
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  .object-fit-container.contain img {
+      object-fit: contain;
+  }
 ```
-### Supporting lazy responsive image loading?
-You can call `objectFitCover()` anytime to fix the image-cover in non-supporting browsers. For example with [LazySizes](https://github.com/aFarkas/lazysizes):
+- Supporting lazy responsive image loading?
+  You can call `objectFitCover()` anytime to fix the image-cover in non-supporting browsers. For example with [LazySizes](https://github.com/aFarkas/lazysizes):
 
-CSS:
-``` css
-.no-object-fit {
-    .object-fit-container {
-        // The lazysizes lib ignores images with display: none, so overwrite the styling from the ObjectFitCover polyfill
-        img.lazyload {
-            display: block;
-        }
-    }
-}
+  CSS:
+  ``` css
+  .no-object-fit {
+      .object-fit-container {
+          // The lazysizes lib ignores images with display: none, so overwrite the styling from the ObjectFitCover polyfill
+          img.lazyload {
+              display: block;
+          }
+      }
+  }
 
-.lazyload {
-    opacity: 0;
-}
+  .lazyload {
+      opacity: 0;
+  }
 
-.lazyloaded {
-    opacity: 1;
-}
-```
+  .lazyloaded {
+      opacity: 1;
+  }
+  ```
 
-``` js
-// fix the images just before showing them
-document.addEventListener('lazybeforeunveil', function () {
-    objectFitCover();
-}
+  ``` js
+  // fix the images just before showing them
+  document.addEventListener('lazybeforeunveil', function () {
+      objectFitCover();
+  }
 ```
