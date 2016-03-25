@@ -36,20 +36,20 @@ Note: if you don't need picturefill, set `window.picturefill = {}` to make this 
 
 ## Browser support
 `object-fit: cover` works in below browsers, so ObjectFitCover is not needed for these:
-Chrome > 30
-Safari > 7
-Firefox > 35
-Android Browser > 4.4
-Opera > 18+
+- Chrome > 30
+- Safari > 7
+- Firefox > 35
+- Android Browser > 4.4
+- Opera > 18+
 
 ObjectFitCover works in:
-Chrome
-Safari > 3
-Firefox > 4
-Internet Explorer > 8
-Edge
-Android Browser > 2.3
-Opera > 10.1
+- Chrome
+- Safari > 3
+- Internet Explorer > 8
+- Edge
+- Firefox > 4
+- Android Browser > 2.3
+- Opera > 10.1
 
 ## What is not (yet) supported?
 - CSS property `background-attachment: fixed`
