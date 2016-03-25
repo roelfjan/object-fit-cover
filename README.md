@@ -35,7 +35,7 @@ Note: if you don't need picturefill, set `window.picturefill = {}` to make this 
 [See the examples](http://roelfjan.github.io/object-fit-cover/)
 
 ## Browser support
-`object-fit: cover` works in below browsers, so ObjectFitCover is not needed for these:
+`object-fit: cover` is supported in below browsers, so ObjectFitCover is not needed for these:
 - Chrome > 30
 - Safari > 7
 - Firefox > 35
