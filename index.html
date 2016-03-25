@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Object fit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <script>
-            /*! ObjectFitCover 0.0.1 */
-!function(){function a(){var a=".object-fit-container { position: relative; } .object-fit-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .object-fit-container.cover img { object-fit: cover; } .object-fit-container.cover { background-position: center center; background-size: cover; background-repeat: no-repeat; } .no-object-fit .object-fit-container img { display: none; }",b=document.createElement("style");b.type="text/css",b.styleSheet?b.styleSheet.cssText=a:b.appendChild(document.createTextNode(a)),document.head.appendChild(b)}function b(){c||d(function(){for(var a=document.getElementsByClassName("object-fit-container"),b=0;b<a.length;b++){var c=a[b].getElementsByTagName("img")[0],d=c.currentSrc||c.src;a[b].style.backgroundImage="url("+d+")"}})}var c="objectFit"in document.documentElement.style,d=function(){return window.requestAnimationFrame||function(a){window.setTimeout(a,10)}}();if(a(),!c){document.documentElement.className+=" no-object-fit";var e=setInterval(function(){window.picturefill&&(clearInterval(e),d(b))},100);window.addEventListener("resize",function(){setTimeout(function(){b()},100)})}window.objectFitCover=b}();
+        <script src="objectfitcover.js">
         </script>
 
         <style>
@@ -53,11 +53,11 @@
 
                         <pre>
 &lt;div class="object-fit-container cover object-fit-container-example-1">
-    &lt;img src="images/example1@1200x800.jpg" alt="Example image" />
+    &lt;img src="example-images/example1@1200x800.jpg" alt="Example image" />
 &lt;/div>
 </pre>
                         <div class="object-fit-container cover object-fit-container-example-1">
-                            <img src="images/example1@1200x800.jpg"
+                            <img src="example-images/example1@1200x800.jpg"
                                  alt="Example 1" />
                         </div>
                     </div>
@@ -80,11 +80,11 @@
 
                         <pre>
 &lt;div class="object-fit-container cover object-fit-container-example-2">
-    &lt;img src="images/example2@1200x800.jpg"
-         srcset="images/example2@2400x1600.jpg 2400w,
-                 images/example2@1200x800.jpg 1200w,
-                 images/example2@800x533.jpg 800w,
-                 images/example2@400x267.jpg 400w"
+    &lt;img src="example-images/example2@1200x800.jpg"
+         srcset="example-images/example2@2400x1600.jpg 2400w,
+                 example-images/example2@1200x800.jpg 1200w,
+                 example-images/example2@800x533.jpg 800w,
+                 example-images/example2@400x267.jpg 400w"
          sizes="(min-width: 1200px) 1170px,
                 (min-width: 992px) 970px,
                 (min-width: 768px) 750px,
@@ -93,11 +93,11 @@
 &lt;/div>
 </pre>
                         <div class="object-fit-container cover object-fit-container-example-2">
-                            <img src="images/example2@400x267.jpg"
-                                 srcset="images/example2@2400x1600.jpg 2400w,
-                                         images/example2@1200x800.jpg 1200w,
-                                         images/example2@800x533.jpg 800w,
-                                         images/example2@400x267.jpg 400w"
+                            <img src="example-images/example2@400x267.jpg"
+                                 srcset="example-images/example2@2400x1600.jpg 2400w,
+                                         example-images/example2@1200x800.jpg 1200w,
+                                         example-images/example2@800x533.jpg 800w,
+                                         example-images/example2@400x267.jpg 400w"
                                  sizes="(min-width: 1200px) 1170px,
                                         (min-width: 992px) 970px,
                                         (min-width: 768px) 750px,
@@ -126,11 +126,11 @@
 
                         <pre>
 &lt;div class="object-fit-container cover object-fit-container-example-2">
-    &lt;img src="images/example2@1200x800.jpg"
-         srcset="images/example2@2400x1600.jpg 2400w,
-                 images/example2@1200x800.jpg 1200w,
-                 images/example2@800x533.jpg 800w,
-                 images/example2@400x267.jpg 400w"
+    &lt;img src="example-images/example2@1200x800.jpg"
+         srcset="example-images/example2@2400x1600.jpg 2400w,
+                 example-images/example2@1200x800.jpg 1200w,
+                 example-images/example2@800x533.jpg 800w,
+                 example-images/example2@400x267.jpg 400w"
          sizes="(min-width: 1200px) 1170px,
                 (min-width: 992px) 970px,
                 (min-width: 768px) 750px,
@@ -141,16 +141,16 @@
                         <div class="object-fit-container cover object-fit-container-example-2">
                             <picture>
                                 <source media="(min-width: 768px)"
-                                    srcset="images/example2@2400x1600.jpg 2400w,
-                                         images/example2@1200x800.jpg 1200w,
-                                         images/example2@800x533.jpg 800w,
-                                         images/example2@400x267.jpg 400w"
+                                    srcset="example-images/example2@2400x1600.jpg 2400w,
+                                         example-images/example2@1200x800.jpg 1200w,
+                                         example-images/example2@800x533.jpg 800w,
+                                         example-images/example2@400x267.jpg 400w"
                                  sizes="(min-width: 1200px) 1170px,
                                         (min-width: 992px) 970px,
                                         (min-width: 768px) 750px,
                                         100vw">
 
-                            <img src="images/example1@1200x800.jpg"
+                            <img src="example-images/example1@1200x800.jpg"
                                  sizes="100vw"
                                  alt="Example 3" />
                             </picture>

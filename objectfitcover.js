@@ -17,7 +17,9 @@
     } else {
       style.appendChild(document.createTextNode(css));
     }
-    document.head.appendChild(style);
+
+    var head = document.head || document.getElementsByTagName("head")[0];
+    head.appendChild(style);
   }
 
   function setImages() {
