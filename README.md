@@ -1,14 +1,11 @@
 # ObjectFitCover
-A polyfill for responsive background image cover with the `img` or `picture` using the responsive image spec.
+A polyfill for background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.
 
 ## Intro
-- Cover an element with an image `img`, with CSS property `object-fit`
-- JS-fallback for browsers not supporting CSS property `object-fit`
-- Responsive image behaviour with `img srcset`, for old browsers the polyfill [Picturefill](https://github.com/scottjehl/picturefill)
+Covering an area with an image can be done with `background-size: cover`, but adding responsive image behaviour can be a pain with custom data-attributes or image-source references in CSS.
 
-## Advantages
-- Modern browsers can use `img srcset` together with CSS property `object-fit` to achieve the `background-size: cover` effect (no JS needed!)
-- Works with the good old `img` tag, so no longer image-src-refences in CSS-files or custom data-attributes
+The cover effect together with responsive image behaviour can be done native in modern browsers (no javascript needed!) with the CSS property [`object-fit`](http://caniuse.com/#search=object-fit) combined with the [`<img> (with srcset)`](http://caniuse.com/#search=srcset) or [`<picture>`](http://caniuse.com/#search=picture) element.
+ObjectFitCover adds a background-image fallback for browsers not supporting the CSS property `object-fit: cover`. This polyfill works together with [Picturefill](https://github.com/scottjehl/picturefill), a polyfill for responsive image behaviour with `<picture>`, srcset, sizes and more.
 
 ## Usage
 
@@ -27,7 +24,7 @@ Preferably inline (1.17kb, 0.5kb gzipped) in the `head` section before the style
 ```
 
 ### 2. Include [Picturefill](https://github.com/scottjehl/picturefill/)
-This is a polyfill for supporting `srcset` and the `picture` element. Include it preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
+Include it preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
 
 ```html
 <script src="picturefill.min.js" async></script>
@@ -47,11 +44,12 @@ Note: if you don't need picturefill, set `window.picturefill = {}` to make this 
 ## What is not (yet) supported?
 - CSS property `background-attachment: fixed`
 - CSS property `object-position`
-
-## Known issues
-- Firefox: combining <code>object-fit</code> with a transition gives weird behaviour (see bug .. )
+- Video's
 
 ## What about?
+- Why is this polyfill not supporting al possible values of the CSS property `object-fit`?
+  This polyfill can be small in size because of not supporting all possible values. The cover-effect is an often used effect on sites. It's not needed for those cases to load a complete polyfill for all possible (unused) values.
+
 - Supporting `object-fit: contain`?
   You can add this CSS to make it work as well:
   ```css
