@@ -4,7 +4,7 @@ A polyfill for background-image cover effect combined with responsive image beha
 ## Intro
 Covering an area with an image can be done with `background-size: cover`, but adding responsive image behaviour can be a pain with custom data-attributes or image-source references in CSS.
 
-The cover effect together with responsive image behaviour can be done native in modern browsers (no javascript needed!) with the CSS property [`object-fit`](http://caniuse.com/#search=object-fit) combined with the [`<img> (with srcset)`](http://caniuse.com/#search=srcset) or [`<picture>`](http://caniuse.com/#search=picture) element.
+The cover effect together with responsive image behaviour can be done native in modern browsers (no javascript needed!) with the [CSS property `object-fit`](https://developer.mozilla.org/nl/docs/Web/CSS/object-fit) ([support](http://caniuse.com/#search=object-fit)) combined with the `<img> (with srcset)` ([support](http://caniuse.com/#search=srcset)) or `<picture>` ([support](http://caniuse.com/#search=picture)) element.
 ObjectFitCover adds a background-image fallback for browsers not supporting the CSS property `object-fit: cover`. This polyfill works together with [Picturefill](https://github.com/scottjehl/picturefill), a polyfill for responsive image behaviour with `<picture>`, srcset, sizes and more.
 
 ## Usage
@@ -24,7 +24,7 @@ Preferably inline (1.17kb, 0.5kb gzipped) in the `head` section before the style
 ```
 
 ### 2. Include [Picturefill](https://github.com/scottjehl/picturefill/)
-Include it preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
+Preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
 
 ```html
 <script src="picturefill.min.js" async></script>
