@@ -32,6 +32,18 @@ Preferably async, [to avoid making it renderblocking](https://developers.google.
 Note: if you don't need picturefill, set `window.picturefill = {}` to make this polyfill work.
 
 ### 3. Include your images & CSS
+```css
+.example {
+    width: 100px;
+    height: 300px;
+}
+```
+
+```html
+<div class="object-fit-container cover example">
+    <img src="fallback.jpg" srcset="image@1x 1x, image@2x 2x" />
+</div>
+```
 [See the examples](http://roelfjan.github.io/object-fit-cover/)
 
 ## Browser support
