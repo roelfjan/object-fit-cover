@@ -1,10 +1,10 @@
 # ObjectFitCover
-A polyfill for background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.
+A polyfill for the background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.
 
 ## Intro
-Covering an area with an image can be done with `background-size: cover`, but adding responsive image behaviour can be a pain with custom data-attributes or image-source references in CSS.
+Covering an area with an image can be achieved with `background-size: cover`, but adding responsive image behaviour can be a pain with custom data-attributes or image-source references in CSS.
 
-The cover effect together with responsive image behaviour can be done native in modern browsers (no javascript needed!) with the [CSS property `object-fit`](https://developer.mozilla.org/nl/docs/Web/CSS/object-fit) ([support](http://caniuse.com/#search=object-fit)) combined with the `<img> (with srcset)` ([support](http://caniuse.com/#search=srcset)) or `<picture>` ([support](http://caniuse.com/#search=picture)) element.
+The cover effect together with responsive image behaviour can be achieved native in modern browsers (no javascript needed!) with the [CSS property `object-fit`](https://developer.mozilla.org/nl/docs/Web/CSS/object-fit) ([support](http://caniuse.com/#search=object-fit)) combined with the `<img> (with srcset)` ([support](http://caniuse.com/#search=srcset)) or `<picture>` ([support](http://caniuse.com/#search=picture)) element.
 ObjectFitCover adds a background-image fallback for browsers not supporting CSS property `object-fit: cover`. This polyfill works together with [Picturefill](https://github.com/scottjehl/picturefill), a polyfill for responsive image behaviour with `<picture>`, srcset, sizes and more.
 
 ## Usage
