@@ -74,26 +74,6 @@ ObjectFitCover works in:
 - **Supporting lazy responsive image loading?**
   You can call `objectFitCover()` anytime to fix the image-cover in non-supporting browsers. For example with [LazySizes](https://github.com/aFarkas/lazysizes):
 
-  CSS:
-  ``` css
-  .no-object-fit {
-      .object-fit-container {
-          // The lazysizes lib ignores images with display: none, so overwrite the styling from the ObjectFitCover polyfill
-          img.lazyload {
-              display: block;
-          }
-      }
-  }
-
-  .lazyload {
-      opacity: 0;
-  }
-
-  .lazyloaded {
-      opacity: 1;
-  }
-  ```
-
   ``` js
   // fix the images just before showing them
   document.addEventListener('lazybeforeunveil', function () {
