@@ -18,7 +18,7 @@
       style.appendChild(document.createTextNode(css));
     }
 
-    var head = document.head || document.getElementsByTagName("head")[0];
+    var head = document.head || document.getElementsByTagName('head')[0];
     head.appendChild(style);
   }
 
