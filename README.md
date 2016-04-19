@@ -40,7 +40,7 @@ Note: if you don't need picturefill, set `window.picturefill = {}` to make this 
 - Safari > 7
 - Firefox > 35
 - Android Browser > 4.4
-- Opera > 18+
+- Opera > 18
 
 ObjectFitCover works in:
 - Chrome
@@ -57,7 +57,7 @@ ObjectFitCover works in:
 - Video's
 
 ## What about?
-- **Why is this polyfill not supporting al possible values of the CSS property `object-fit`?**
+- **Supporting all possible values of the CSS property `object-fit`?**
   This polyfill can be small in size because of not supporting all possible values. The cover-effect is an often used effect on sites. It's not needed for those cases to load a complete polyfill for all possible (unused) values.
 
 - **Supporting `object-fit: contain`?**
