@@ -1,5 +1,8 @@
 (function () {
+  // check for object-fit support
   var supportsObjectFit = 'objectFit' in document.documentElement.style;
+
+  // create a fallback for requestAnimationFrame
   var raf = (function () {
     return window.requestAnimationFrame ||
       function (callback) {
@@ -7,13 +10,14 @@
       };
   })();
 
-  function setImages() {
+  // Add a background-image fallback
+  function setImages(options) {
     if (supportsObjectFit) {
       return;
     }
 
     raf(function () {
-      var elements = document.getElementsByClassName('object-fit-container');
+      var elements = options.elements || document.getElementsByClassName('object-fit-container');
 
       for (var i = 0; i < elements.length; i++) {
         var img = elements[i].getElementsByTagName('img')[0];
