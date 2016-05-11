@@ -103,3 +103,5 @@ ObjectFitCover works in:
       objectFitCover();
   }
 ```
+- **Supporting browsers with Javascript disabled?**
+  Javascript disabled is not an issue in browsers that support `object-fit: cover` and  `<img> (with srcset)` or `<picture>`. The image is scaled to fit the object-fitcontainer in browsers that don't support `object-fit: cover`. So it's not an ideal visual appearance, but it still got the image. Make sure if you use `srcset` to provide a fallback image in the `src` attribute for browsers that don't support `srcset` or `<picture>`. More info on the [PictureFill website](https://scottjehl.github.io/picturefill/#gotchas), point **JS-Disabled Browsers only see alt text**.
