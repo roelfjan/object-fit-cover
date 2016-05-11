@@ -17,7 +17,7 @@
     }
 
     raf(function () {
-      var elements = options.elements || document.getElementsByClassName('object-fit-container');
+      var elements = (options && options.elements) || document.getElementsByClassName('object-fit-container');
 
       for (var i = 0; i < elements.length; i++) {
         var img = elements[i].getElementsByTagName('img')[0];
