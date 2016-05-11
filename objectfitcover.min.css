@@ -1,0 +1,1 @@
+.object-fit-container{position:relative}.object-fit-container img{position:absolute;top:0;left:0;width:100%;height:100%}.object-fit-container.cover{background-position:center center;background-size:cover;background-repeat:no-repeat}.object-fit-container.cover img{object-fit:cover}.no-object-fit .object-fit-container img{display:none}

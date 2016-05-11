@@ -7,21 +7,6 @@
       };
   })();
 
-  function addStyles() {
-    var css = '.object-fit-container { position: relative; } .object-fit-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .object-fit-container.cover img { object-fit: cover; } .object-fit-container.cover { background-position: center center; background-size: cover; background-repeat: no-repeat; } .no-object-fit .object-fit-container img { display: none; }',
-      style = document.createElement('style');
-
-    style.type = 'text/css';
-    if (style.styleSheet) {
-      style.styleSheet.cssText = css;
-    } else {
-      style.appendChild(document.createTextNode(css));
-    }
-
-    var head = document.head || document.getElementsByTagName('head')[0];
-    head.appendChild(style);
-  }
-
   function setImages() {
     if (supportsObjectFit) {
       return;
@@ -42,8 +27,6 @@
   }
 
   // execute stuff
-  addStyles();
-
   if (!supportsObjectFit) {
     document.documentElement.className += ' no-object-fit';
 

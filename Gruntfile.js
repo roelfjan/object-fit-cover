@@ -3,6 +3,16 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    less: {
+      options: {
+        compress: true
+      },
+      build: {
+        files: {
+          'objectfitcover.min.css': 'objectfitcover.less'
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= pkg.version %> */\n'
@@ -14,8 +24,9 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['less','uglify']);
 
 };

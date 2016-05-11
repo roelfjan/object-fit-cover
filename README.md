@@ -9,27 +9,29 @@ ObjectFitCover adds a background-image fallback for browsers not supporting CSS 
 
 ## Usage
 
-### 1. Include ObjectFitCover
-Preferably inline (1.23kb, 0.6kb gzipped) in the `head` section before the stylesheets. This to avoid flashes and have the best render performance. [Copy the source from here]()
+### 1. Include ObjectFitCover Javascript
+Preferably inline (0.6kb, 0.4kb gzipped) in the `head` section before the stylesheets. This to avoid flashes and have the best render performance. [Copy the source from here]()
 
 
 ```html
 <head>
     <script>
-      ..ObjectFitCover inline..
+      ..objectfitcover.min.js inline..
     </script>
 
-    <link rel="stylesheet" href="yourstylesheet.css" />
+    ...
 </head>
 ```
 
-### 2. Include [Picturefill](https://github.com/scottjehl/picturefill/)
-Preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
-
+### 2. Include ObjectFitCover CSS
+Load if after the ObjectFitCover Javascript, to avoid flashes on the page. Preferably combined with your CSS.
 ```html
-<script src="picturefill.min.js" async></script>
+<head>
+    ...
+
+    <link rel="stylesheet" href="objectfitcover.min.css" />
+</head>
 ```
-Note: if you don't need picturefill, set `window.picturefill = {}` to make this polyfill work.
 
 ### 3. Include your images & CSS
 ```css
@@ -45,6 +47,15 @@ Note: if you don't need picturefill, set `window.picturefill = {}` to make this 
 </div>
 ```
 [See the examples](http://roelfjan.github.io/object-fit-cover/)
+
+### 4. Include [Picturefill](https://github.com/scottjehl/picturefill/)
+Preferably async, [to avoid making it renderblocking](https://developers.google.com/speed/docs/insights/BlockingJS).
+
+```html
+<script src="picturefill.min.js" async></script>
+```
+Note: if you don't need picturefill, set `window.picturefill = {}` to make this polyfill work.
+
 
 ## Browser support
 `object-fit: cover` is supported in below browsers, so ObjectFitCover is not needed for these:

@@ -1,0 +1,29 @@
+.object-fit-container {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.cover {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.no-object-fit {
+  .object-fit-container {
+    img {
+      display: none;
+    }
+  }
+}
