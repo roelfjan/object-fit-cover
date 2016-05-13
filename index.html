@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Object fit</title>
+        <title>Object fit cover</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <script src="objectfitcover.min.js"></script>
@@ -18,15 +18,17 @@
                 height: 300px;
             }
 
-            .object-fit-container-example-4 {
+            .object-fit-container-example-3 {
                 width: 100%;
                 height: 300px;
-                background-position: left top;
             }
 
-            .object-fit-container-example-4 img {
-                object-position: 0 0;
+            @media (max-width: 991px) {
+                .object-fit-container-example-3 {
+                    height: 600px;
+                }
             }
+
         </style>
 
         <link rel="stylesheet" href="bootstrap.min.css" />
@@ -53,11 +55,11 @@
 
                         <pre>
 &lt;div class="object-fit-container cover object-fit-container-example-1">
-    &lt;img src="example-images/example1@1200x800.jpg" alt="Example image" />
+    &lt;img src="example-images/example1@1200x600.jpg" alt="Example image" />
 &lt;/div>
 </pre>
                         <div class="object-fit-container cover object-fit-container-example-1">
-                            <img src="example-images/example1@1200x800.jpg"
+                            <img src="example-images/example1@1200x600.jpg"
                                  alt="Example 1" />
                         </div>
                     </div>
@@ -79,11 +81,11 @@
 
                         <pre>
 &lt;div class="object-fit-container cover object-fit-container-example-2">
-    &lt;img src="example-images/example2@400x267.jpg"
+    &lt;img src="example-images/example2@400x266.jpg"
          srcset="example-images/example2@2400x1600.jpg 2400w,
                  example-images/example2@1200x800.jpg 1200w,
                  example-images/example2@800x533.jpg 800w,
-                 example-images/example2@400x267.jpg 400w"
+                 example-images/example2@400x266.jpg 400w"
          sizes="(min-width: 1200px) 1170px,
                 (min-width: 992px) 970px,
                 (min-width: 768px) 750px,
@@ -92,11 +94,11 @@
 &lt;/div>
 </pre>
                         <div class="object-fit-container cover object-fit-container-example-2">
-                            <img src="example-images/example2@400x267.jpg"
+                            <img src="example-images/example2@400x266.jpg"
                                  srcset="example-images/example2@2400x1600.jpg 2400w,
                                          example-images/example2@1200x800.jpg 1200w,
                                          example-images/example2@800x533.jpg 800w,
-                                         example-images/example2@400x267.jpg 400w"
+                                         example-images/example2@400x266.jpg 400w"
                                  sizes="(min-width: 1200px) 1170px,
                                         (min-width: 992px) 970px,
                                         (min-width: 768px) 750px,
@@ -116,57 +118,63 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <pre>
-.object-fit-container-example-2 {
+.object-fit-container-example-3 {
     width: 100%;
     height: 300px;
+}
+
+@media (max-width: 991px) {
+    .object-fit-container-example-3 {
+        height: 600px;
+    }
 }
 </pre>
 
                         <pre>
-&lt;div class="object-fit-container cover object-fit-container-example-2">
-    &lt;img src="example-images/example2@1200x800.jpg"
-         srcset="example-images/example2@2400x1600.jpg 2400w,
-                 example-images/example2@1200x800.jpg 1200w,
-                 example-images/example2@800x533.jpg 800w,
-                 example-images/example2@400x267.jpg 400w"
-         sizes="(min-width: 1200px) 1170px,
-                (min-width: 992px) 970px,
-                (min-width: 768px) 750px,
-                100vw"
-         alt="Example 2" />
+&lt;div class="object-fit-container cover object-fit-container-example-3">
+    &lt;picture>
+        &lt;!--[if IE 9]>&lt;video style="display: none;">&lt;![endif]-->
+
+        // the portrait picture
+        &lt;source media="(max-width: 991px)"
+            srcset="example-images/example3-portrait@800x1200.jpg 800w,
+                    example-images/example3-portrait@400x600.jpg 400w"
+            sizes="(min-width: 768px) 720px, 100vw">
+        &lt;!--[if IE 9]>&lt;/video>&lt;![endif]-->
+
+        // the landscape picture
+        &lt;img srcset="example-images/example3-landscape@2400x1350.jpg 2400w,
+                     example-images/example3-landscape@1200x675.jpg 1200w"
+            sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px"
+            alt="Example 3" />
+    &lt;/picture>
 &lt;/div>
 </pre>
-                        <div class="object-fit-container cover object-fit-container-example-2">
+<p>
+    Note: More about the IE9 fix on the <a href="http://scottjehl.github.io/picturefill/#ie9">Picturefill website</a>.
+</p>
+                        <div class="object-fit-container cover object-fit-container-example-3">
                             <picture>
-                                <source media="(min-width: 768px)"
-                                    srcset="example-images/example2@2400x1600.jpg 2400w,
-                                         example-images/example2@1200x800.jpg 1200w,
-                                         example-images/example2@800x533.jpg 800w,
-                                         example-images/example2@400x267.jpg 400w"
-                                 sizes="(min-width: 1200px) 1170px,
-                                        (min-width: 992px) 970px,
-                                        (min-width: 768px) 750px,
-                                        100vw">
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source media="(max-width: 991px)"
+                                    srcset="example-images/example3-portrait@800x1200.jpg 800w,
+                                            example-images/example3-portrait@400x600.jpg 400w"
+                                    sizes="(min-width: 768px) 720px, 100vw">
+                                <!--[if IE 9]></video><![endif]-->
 
-                            <img src="example-images/example1@1200x800.jpg"
-                                 sizes="100vw"
-                                 alt="Example 3" />
+                                <img
+                                  srcset="example-images/example3-landscape@2400x1350.jpg 2400w,
+                                          example-images/example3-landscape@1200x675.jpg 1200w"
+                                  sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px"
+                                  alt="Example 3" />
                             </picture>
                         </div>
+
                         <p>
                             Note: You only will see a changing src image when starting with a small viewport width. When the browsers already has downloaded a larger image, then the smaller isn't downloaded anymore.
                         </p>
                     </div>
                 </div>
-
-
-            </div>
-
-
-            <div>
-                IE8<br>
-                non-js fallback?<br>
-                dynamically loaded fixen<br>
 
 
             </div>
