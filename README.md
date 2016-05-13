@@ -10,7 +10,7 @@ ObjectFitCover adds a background-image fallback for browsers not supporting CSS 
 ## Usage
 
 ### 1. Include ObjectFitCover Javascript
-Preferably inline (0.6kb, 0.4kb gzipped) in the `head` section before the stylesheets. This to avoid flashes and have the best render performance. [Copy the source from here]()
+Preferably inline (0.6kb, 0.4kb gzipped) in the `head` section before the stylesheets. This to avoid flashes and have the best render performance. [Copy the source from here](https://raw.githubusercontent.com/roelfjan/object-fit-cover/gh-pages/objectfitcover.min.js)
 
 
 ```html
