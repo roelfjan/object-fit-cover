@@ -43,7 +43,7 @@ Load if after the ObjectFitCover Javascript, to avoid flashes on the page. Prefe
 
 ```html
 <div class="object-fit-container cover example">
-    <img src="fallback.jpg" srcset="image@1x 1x, image@2x 2x" />
+    <img src="fallback.jpg" srcset="image@1x.jpg 1x, image@2x.jpg 2x" />
 </div>
 ```
 [See the examples](http://roelfjan.github.io/object-fit-cover/)
