@@ -1,6 +1,30 @@
 {
-  "name": "ObjectFitCover",
-  "version": "0.9.0",
+  "name": "object-fit-cover",
+  "version": "1.0.1",
+  "description": "A polyfill for the background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.",
+  "main": "objectfitcover.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roelfjan/object-fit-cover.git"
+  },
+  "keywords": [
+    "object-fit",
+    "responsive images",
+    "srcset",
+    "picture",
+    "picturefill",
+    "polyfill",
+    "image",
+    "respimg",
+    "background-size: cover",
+    "cover"
+  ],
+  "author": "Roelf-Jan de Vries <roelfjan@q42.nl> (https://twitter.com/roelfjandevries)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roelfjan/object-fit-cover/issues"
+  },
+  "homepage": "https://github.com/roelfjan/object-fit-cover#readme",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "^1.0.0",
