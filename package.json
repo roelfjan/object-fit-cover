@@ -1,5 +1,5 @@
 {
-  "name": "ObjectFitCover",
+  "name": "object-fit-cover",
   "version": "1.0.0",
   "description": "A polyfill for the background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.",
   "main": "objectfitcover.js",
