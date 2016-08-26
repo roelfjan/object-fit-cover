@@ -24,7 +24,7 @@ Preferably inline (0.6kb, 0.4kb gzipped) in the `head` section before the styles
 ```
 
 ### 2. Include ObjectFitCover CSS
-Load if after the ObjectFitCover Javascript, to avoid flashes on the page. Preferably combined with your CSS.
+Load it after the ObjectFitCover Javascript, to avoid flashes on the page. Preferably combined with your existing CSS.
 ```html
 <head>
     ...
