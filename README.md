@@ -1,5 +1,6 @@
 # ObjectFitCover
 A polyfill for the background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.
+
 [![npm version](https://badge.fury.io/js/object-fit-cover.svg)](https://badge.fury.io/js/object-fit-cover)
 
 ## Intro
