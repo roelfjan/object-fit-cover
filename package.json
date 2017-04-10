@@ -2,7 +2,7 @@
   "name": "object-fit-cover",
   "version": "1.0.2",
   "description": "A polyfill for the background-image cover effect combined with responsive image behaviour with the `<img>` or `<picture>` element.",
-  "main": "objectfitcover.js",
+  "main": "objectfitcover.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/roelfjan/object-fit-cover.git"
