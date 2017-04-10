@@ -1,19 +1,12 @@
 (function () {
-  // check for object-fit support
-  if('objectFit' in document.documentElement.style) {
-    return;
-  }
+  var hasObjectFit = 'objectFit' in document.documentElement.style;
 
-  // create a fallback for requestAnimationFrame
-  var raf = (function () {
-    return window.requestAnimationFrame ||
-      function (callback) {
-        window.setTimeout(callback, 10);
-      };
-  })();
-
-  // add a background-image fallback
+    // add a background-image fallback
   function setImages(options) {
+    if (hasObjectFit) {
+      return;
+    }
+
     raf(function () {
       var elements = (options && options.elements) || document.getElementsByClassName('object-fit-container');
 
@@ -27,6 +20,21 @@
       }
     });
   }
+
+  window.objectFitCover = setImages;
+
+  // check for object-fit support
+  if(hasObjectFit) {
+    return;
+  }
+
+  // create a fallback for requestAnimationFrame
+  var raf = (function () {
+    return window.requestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 10);
+      };
+  })();
 
   // add class to body
   document.documentElement.className += ' no-object-fit';
@@ -47,5 +55,4 @@
     }, 100);
   });
 
-  window.objectFitCover = setImages;
 })();
