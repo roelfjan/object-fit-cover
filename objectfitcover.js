@@ -1,6 +1,8 @@
 (function () {
   // check for object-fit support
-  var supportsObjectFit = 'objectFit' in document.documentElement.style;
+  if('objectFit' in document.documentElement.style) {
+    return;
+  }
 
   // create a fallback for requestAnimationFrame
   var raf = (function () {
@@ -10,12 +12,8 @@
       };
   })();
 
-  // Add a background-image fallback
+  // add a background-image fallback
   function setImages(options) {
-    if (supportsObjectFit) {
-      return;
-    }
-
     raf(function () {
       var elements = (options && options.elements) || document.getElementsByClassName('object-fit-container');
 
@@ -30,26 +28,24 @@
     });
   }
 
-  // execute stuff
-  if (!supportsObjectFit) {
-    document.documentElement.className += ' no-object-fit';
+  // add class to body
+  document.documentElement.className += ' no-object-fit';
 
-    // check when picturefill is loaded, execute it after picturefill
-    var checkExist = setInterval(function () {
-      if (window.picturefill) {
-        clearInterval(checkExist);
+  // check when picturefill is loaded, execute it after picturefill
+  var checkExist = setInterval(function () {
+    if (window.picturefill) {
+      clearInterval(checkExist);
 
-        raf(setImages);
-      }
+      raf(setImages);
+    }
+  }, 100);
+
+  window.addEventListener('resize', function () {
+    // Picturefill v3.0.2 uses a 99ms timeout (https://github.com/scottjehl/picturefill/blob/master/src/picturefill.js#L1422), the resize event needs to be after that
+    setTimeout(function () {
+      setImages();
     }, 100);
-
-    window.addEventListener('resize', function () {
-      // Picturefill v3.0.2 uses a 99ms timeout (https://github.com/scottjehl/picturefill/blob/master/src/picturefill.js#L1422), the resize event needs to be after that
-      setTimeout(function () {
-        setImages();
-      }, 100);
-    });
-  }
+  });
 
   window.objectFitCover = setImages;
 })();
