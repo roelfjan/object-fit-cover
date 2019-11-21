@@ -13,6 +13,11 @@
       for (var i = 0; i < elements.length; i++) {
         var img = elements[i].getElementsByTagName('img')[0];
 
+        if (!img) {
+          console.warn('Object fit container has no image:', elements[i]);
+          continue;
+        }
+
         // get current image src: Edge only supports 'currentSrc' for getting the current image src ('src' returns value DOM value)
         var imageSrc = img.currentSrc || img.src;
 
